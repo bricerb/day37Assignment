@@ -8,8 +8,12 @@ import static org.junit.Assert.*;
  * Created by Brice on 9/27/16.
  */
 public class SortingRunnerTest {
-//    BaseSorter sortingRunner = new BubbleSorter();
-    BaseSorter sortingRunner = new SelectionSorter();
+    BaseSorter sortingRunner = new BubbleSorter();
+//    BaseSorter sortingRunner = new SelectionSorter();
+
+    FactorialSolver myFactorialSolver = new FactorialSolver();
+
+    FibNumberSolver myFibSolver = new FibNumberSolver();
 
     @Before
     public void setUp() throws Exception {
@@ -123,6 +127,34 @@ public class SortingRunnerTest {
         int[] scrambledArray2 = {26, 5, 17, -10, 17, 20};
         sortingRunner.sort(scrambledArray2);
         assert6ElementOrder(scrambledArray2);
+    }
+
+    @Test
+    public void FactorialSolverTest() {
+        assertEquals(6, myFactorialSolver.factorialMath(3));
+        assertEquals(120, myFactorialSolver.factorialMath(5));
+        assertEquals(720, myFactorialSolver.factorialMath(6));
+    }
+
+    @Test
+    public void getFibTest() {
+        assertEquals(3, myFibSolver.getFib(4));
+//        System.out.println(myFibSolver.trackerNumber);
+        System.out.println(myFibSolver.getFib(4));
+
+        assertEquals(8, myFibSolver.getFib(6));
+//        System.out.println(myFibSolver.trackerNumber);
+        System.out.println(myFibSolver.getFib(6));
+
+        assertEquals(13, myFibSolver.getFib(7));
+//        System.out.println(myFibSolver.trackerNumber);
+        System.out.println(myFibSolver.getFib(7));
+
+        assertEquals(21, myFibSolver.getFib(8));
+//        System.out.println(myFibSolver.trackerNumber);
+        System.out.println(myFibSolver.getFib(8));
+
+        assertEquals(21, myFibSolver.getFib(8));
     }
 
 
